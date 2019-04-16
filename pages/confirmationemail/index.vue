@@ -13,15 +13,12 @@
           sm5
           md5>
           <v-avatar
-            slot="activator"
             size="100px"
             class="my-5"
+          ><img
+            src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+            alt="Avatar"
           >
-            <img
-
-              src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
-              alt="Avatar"
-            >
           </v-avatar>
         </v-flex>
         <v-card-title class="headline">
@@ -37,7 +34,7 @@
             justify-center
             class="my-2">
             <v-btn
-              href="/precheckin"
+              href="/"
               color="blue"
               dark
               large>{{ $vuetify.t('Confirm Your Data') }}</v-btn>
@@ -46,16 +43,12 @@
             justify-center
             color="blue"
             class="my-2">
-            <a
-
-              href="/"
-            >{{ $vuetify.t ('If you do not see the button correctly, click here' )
-            }}</a>
+            <a href="/confirmationemail" >{{ $vuetify.t ('If you do not see the button correctly, click here' ) }}</a>
 
           </v-layout>
-          <span class="my-2">{{ $vuetify.t ('If you do not effect the Pre Check-in your booking is still valid, you can still') }} </span>
+          <span class="my-2">{{ $vuetify.t ('If you do not accept we cannot protect your personal detail') }} </span>
           <br>
-          <span>{{ $vuetify.t ('do it when you arrive at the facility.') }}</span>
+          <span>{{ $vuetify.t ('We give you the best services.') }}</span>
         </v-card-text>
       </v-card>
     </v-layout>
