@@ -34,7 +34,7 @@
             justify-center
             class="my-2">
             <v-btn
-              href="/"
+              href="/confirmedemail"
               color="blue"
               dark
               large>{{ $vuetify.t('Confirm Your Data') }}</v-btn>
@@ -49,6 +49,13 @@
           <span class="my-2">{{ $vuetify.t ('If you do not accept we cannot protect your personal detail') }} </span>
           <br>
           <span>{{ $vuetify.t ('We give you the best services.') }}</span>
+          <hr class="my-4">
+          <div class="text-xs-right">
+            <em><strong>{{ $vuetify.t('Thank You') }}</strong></em>
+          </div>
+          <div class="text-xs-right">
+            <em><small>{{ $vuetify.t('Name Hotel') }}</small></em>
+          </div>
         </v-card-text>
       </v-card>
     </v-layout>
