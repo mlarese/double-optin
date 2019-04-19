@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <v-layout
       column
       justify-center
@@ -134,7 +134,7 @@
         </v-btn>
       </v-layout>
     </div>
-  </div>
+  </v-container>
 </template>
 <script>
   export default {
