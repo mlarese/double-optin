@@ -4,7 +4,7 @@
 </template>
 
 <script>
-    import privacy from "../../components/forms/privacy"
+    import privacy from "../../components/Forms/privacy"
     export default {
         name: "Index",
         components: {privacy},
