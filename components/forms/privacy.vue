@@ -96,6 +96,61 @@
             hide-details/>
         </v-layout>
       </v-flex>
+    </v-layout>
+    <br>
+    <v-layout row>
+      <v-flex
+        xs12
+        sm12>
+        <h4>{{ $vuetify.t('Message*') }}</h4>
+        <v-layout mx-1>
+          <v-text-field
+            box
+            hide-details
+          />
+        </v-layout>
+      </v-flex>
+    </v-layout>
+    <br>
+    <strong> {{ $vuetify.t(' Processing of personal data*') }}</strong>
+    <v-flex xs12>
+      <v-textarea
+        color="teal"
+        box
+        full-width
+      />
+    </v-flex>
+    <v-checkbox
+      v-model="checkbox"
+      :rules="[(v) => !!v || 'You must agree to continue!']"
+      label="You must agree to continue?"
+      required
+    />
+    <br>
+    <strong> {{ $vuetify.t(' Processing of personal data*') }}</strong>
+    <v-flex xs12>
+      <v-textarea
+        color="teal"
+        box
+        full-width
+      />
+    </v-flex>
+    <v-checkbox
+      v-model="checkbox"
+      :rules="[(v) => !!v || 'You must agree to continue!']"
+      label="You must agree to continue?"
+      required
+    />
+    <v-layout >
+      <v-spacer/>
+      <v-btn
+        dark
+        color="blue-grey"
+      >{{ $vuetify.t('send') }}
+        <v-icon
+          right
+          dark>arrow_forward</v-icon>
+      </v-btn>
 
     </v-layout>
   </v-container>

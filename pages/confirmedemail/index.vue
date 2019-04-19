@@ -49,7 +49,7 @@
         justify-center
         class="my-2">
         <v-btn
-          href="/"
+          href="/privacyform"
           color="blue"
           dark
           large>{{ $vuetify.t('View the summary') }}</v-btn>
