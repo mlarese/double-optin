@@ -5,9 +5,18 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     import HomePage from '../modules/homepage/HomePage'
+    const root = {root: true}
     export default {
-        components: {HomePage}
+        components: {HomePage},
+        computed: {
+            ...mapState('booking', ['list']),
+
+        },
+        fetch({store}) {
+            store.dispatch('privacy/load', {}, root)
+        }
     }
 </script>
 

@@ -23,7 +23,7 @@
       </v-flex>
       <v-layout
         class="title"
-        color="red"> {{ $vuetify.t('Thank You') }} {{ Mauro }}!</v-layout>
+        color="red"> {{ $vuetify.t('Thank You') }} {{ item.user }}!</v-layout>
       <br>
       <span>{{ $vuetify.t(' We sent you an email. ') }}</span>
 
@@ -64,7 +64,11 @@
 
 <script>
     export default {
-        name: "Greetings"
+        name: "Greetings",
+        props: {
+            item: {type: Object, default: () => {}}
+        }
+
     }
 </script>
 

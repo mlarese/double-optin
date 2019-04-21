@@ -104,6 +104,7 @@
     <strong> {{ $vuetify.t(' Processing of personal data') }}</strong>
     <v-flex xs12>
       <v-textarea
+        v-model="item.paragraph"
         color="teal"
         box
         full-width
@@ -138,6 +139,10 @@
 </template>
 <script>
   export default {
+      props: {
+          item: {type: Object, default: () => {}},
+          index: {type: Number, default: 0}
+      },
       data () {
           return {
               rules: {

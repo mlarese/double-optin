@@ -23,7 +23,7 @@
         <v-card-title class="headline">
 
 
-          {{ $vuetify.t('Gentile') }} {{ user }} </v-card-title>
+          {{ $vuetify.t('Gentile') }} {{ item.user }} </v-card-title>
         <v-card-text>
           <span class="my-4"> {{ $vuetify.t('To facilitate you on arrival at our facility,') }}</span>
           <br>
@@ -63,7 +63,10 @@
 
 <script>
     export default {
-        name: "ConfirmationEmail"
+        name: "ConfirmationEmail",
+        props: {
+            item: {type: Object, default: () => {}}
+        }
     }
 </script>
 

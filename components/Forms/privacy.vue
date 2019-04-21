@@ -1,6 +1,6 @@
 <template>
   <v-container row>
-    <div><h2> name  surname : {{ $vuetify.t('here are your subscriptions to the regulations of the website www.miodominio.com') }}</h2></div>
+    <div><h2> {{ item.name }}  {{ item.surname }} : {{ $vuetify.t('here are your subscriptions to the regulations of the website www.miodominio.com') }}</h2></div>
     <v-layout class="align-baseline"> <span>{{ $vuetify.t('If you wish you can modify') }}</span>
       <v-spacer/>
       <v-btn
@@ -12,11 +12,11 @@
     <v-layout>
       <h3>{{ $vuetify.t('Regulations') }}: No1_Privacy </h3>
     </v-layout>
-    <v-layout><span>{{ $vuetify.t('Website origin') }}: httml//www.courage.com</span></v-layout>
+    <v-layout><span>{{ $vuetify.t('Website origin') }}: {{ item.website }}</span></v-layout>
     <br>
     <v-layout>
       <span style="color: cadetblue;">
-        {{ $vuetify.t('Last update: ' ) }}  dd/mm/yyyy {{ $vuetify.t('at ' ) }}  hh/mm/ss {{ $vuetify.t('from IP Address: ' ) }} 00:1123:32:54
+        {{ $vuetify.t('Last update: ' ) }}  {{ item.date }} {{ $vuetify.t('at ' ) }}  {{ item.time }} {{ $vuetify.t('from IP Address: ' ) }} 00:1123:32:54
       </span>
       <v-spacer/>
       <strong>{{ $vuetify.t( '*mandatory fields' ) }}</strong>
@@ -30,6 +30,7 @@
         <h4>{{ $vuetify.t('Name*') }}</h4>
         <v-layout mx-1>
           <v-text-field
+            v-model="item.name"
             box
             hide-details
           />
@@ -41,6 +42,7 @@
         <h4>{{ $vuetify.t('Surname*') }}</h4>
         <v-layout mx-1>
           <v-text-field
+            v-model="item.surname"
             :counter="10"
             box
             hide-details/>
@@ -52,6 +54,7 @@
         <h4 >{{ $vuetify.t('Email*') }}</h4>
         <v-layout mx-1>
           <v-text-field
+            v-model="item.email"
             type="email"
             box
             hide-details
@@ -64,7 +67,7 @@
         <h4>{{ $vuetify.t('Phone Number*') }}</h4>
         <v-layout mx-1>
           <v-text-field
-            v-model="phone"
+            v-model="item.phone"
             mask="phone"
             box
             hide-details
@@ -80,6 +83,7 @@
         <h4>{{ $vuetify.t('Others') }}</h4>
         <v-layout mx-1>
           <v-text-field
+            placeholder="other"
             box
             hide-details
           />
@@ -92,6 +96,7 @@
         <v-layout mx-1>
           <v-text-field
             :counter="10"
+            placeholder="other"
             box
             hide-details/>
         </v-layout>
@@ -105,6 +110,7 @@
         <h4>{{ $vuetify.t('Message*') }}</h4>
         <v-layout mx-1>
           <v-text-field
+            placeholder="this is a pre message text"
             box
             hide-details
           />
@@ -158,7 +164,11 @@
 
 <script>
     export default {
-        name: "Privacy"
+        name: "Privacy",
+        props: {
+            item: {type: Object, default: () => {}},
+            index: {type: Number, default: 0}
+        }
     }
 </script>
 
