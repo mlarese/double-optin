@@ -11,7 +11,7 @@
     export default {
         components: {HomePage},
         computed: {
-            ...mapState('booking', ['list']),
+            ...mapState('privacy', ['list']),
 
         },
         fetch({store}) {

@@ -73,7 +73,6 @@
           <h4 >{{ $vuetify.t('Email*') }}</h4>
           <v-layout mx-1>
             <v-text-field
-              v-model="email"
               :rules="emailRules"
               type="email"
               box
@@ -89,7 +88,6 @@
           <h4>{{ $vuetify.t('Phone Number') }}</h4>
           <v-layout mx-1>
             <v-text-field
-              v-model="phone"
               mask="phone"
               box
               hide-details
@@ -104,7 +102,7 @@
     <strong> {{ $vuetify.t(' Processing of personal data') }}</strong>
     <v-flex xs12>
       <v-textarea
-        v-model="item.paragraph"
+        v-model="paragraph"
         color="teal"
         box
         full-width
