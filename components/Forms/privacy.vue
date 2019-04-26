@@ -68,7 +68,7 @@
         <v-layout mx-1>
           <v-text-field
             v-model="item.phone"
-            mask="phone"
+            type="phone"
             box
             hide-details
           />
@@ -83,7 +83,7 @@
         <h4>{{ $vuetify.t('Others') }}</h4>
         <v-layout mx-1>
           <v-text-field
-            placeholder="other"
+            v-model="item.other"
             box
             hide-details
           />
@@ -96,9 +96,8 @@
         <v-layout mx-1>
           <v-text-field
             :counter="10"
-            placeholder="other"
-            box
-            hide-details/>
+            v-model="item.other"
+            box/>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -110,7 +109,7 @@
         <h4>{{ $vuetify.t('Message*') }}</h4>
         <v-layout mx-1>
           <v-text-field
-            placeholder="this is a pre message text"
+            v-model="item.message"
             box
             hide-details
           />
@@ -121,13 +120,14 @@
     <strong> {{ $vuetify.t(' Processing of personal data*') }}</strong>
     <v-flex xs12>
       <v-textarea
+        v-model="item.paragraph"
         color="teal"
         box
         full-width
       />
     </v-flex>
     <v-checkbox
-      v-model="checkbox"
+      v-model="item.checkbox"
       :rules="[(v) => !!v || 'You must agree to continue!']"
       label="You must agree to continue?"
       required
@@ -136,13 +136,14 @@
     <strong> {{ $vuetify.t(' Processing of personal data*') }}</strong>
     <v-flex xs12>
       <v-textarea
+        v-model="item.paragraph"
         color="teal"
         box
         full-width
       />
     </v-flex>
     <v-checkbox
-      v-model="checkbox"
+      v-model="item.checkbox"
       :rules="[(v) => !!v || 'You must agree to continue!']"
       label="You must agree to continue?"
       required

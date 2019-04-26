@@ -1,5 +1,12 @@
 <template>
-  <privacy/>
+  <div>
+    <privacy
+      v-for="(booking, index) in list"
+      :item="booking"
+      :index="index"
+      :key="index"/>
+  </div>
+
 </template>
 
 <script>
@@ -10,11 +17,11 @@
         name: "Index",
         components: {privacy},
         computed: {
-            ...mapState('clients', ['list']),
+            ...mapState('doubleoptin', ['list']),
 
         },
         fetch({store}) {
-            store.dispatch('privacy/load', {}, root)
+            store.dispatch('doubleoptin/load', {}, root)
         }
     }
 </script>

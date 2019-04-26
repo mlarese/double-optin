@@ -1,6 +1,10 @@
 <template>
   <div>
-    <home-page/>
+    <home-page
+      v-for="(guest, i) in list"
+      :item="guest"
+      :key="i"
+    />
   </div>
 </template>
 

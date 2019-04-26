@@ -1,5 +1,10 @@
 <template>
-  <confirmation-email/>
+  <div>
+    <confirmation-email
+      v-for="(guest, i) in list"
+      :item="guest"
+      :key="i"/>
+  </div>
 </template>
 
 <script>
@@ -10,11 +15,11 @@
         name: "Index",
         components: {confirmationEmail},
         computed: {
-            ...mapState('booking', ['list']),
+            ...mapState('privacy', ['list']),
 
         },
         fetch({store}) {
-            store.dispatch('booking/load', {}, root)
+            store.dispatch('privacy/load', {}, root)
         }
     }
 </script>

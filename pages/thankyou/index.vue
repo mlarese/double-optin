@@ -1,5 +1,11 @@
 <template>
-  <greetings/>
+  <div>
+    <greetings
+      v-for="(booking, index) in list"
+      :item="booking"
+      :index="index"
+      :key="index"/>
+  </div>
 </template>
 
 <script>
@@ -10,7 +16,7 @@
         name: "Index",
         components: {greetings},
         computed: {
-            ...mapState('booking', ['list']),
+            ...mapState('privacy', ['list']),
 
         },
         fetch({store}) {
